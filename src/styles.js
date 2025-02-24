@@ -3,13 +3,16 @@
 // Import התמונה
 import backroundmath from './data/images/backroundmath.jpg';
 
+// עוזרים לבדיקה של רוחב החלון (ניתן לעדכן באופן דינמי באפליקציה אם יש צורך)
+const isMobile = window.innerWidth <= 768;
+
 // עיצוב כללי לאפליקציה
 export const app = {
   fontFamily: 'Arial, sans-serif',
   direction: 'rtl',
   textAlign: 'center',
   backgroundColor: '#f9f9f9',
-  paddingTop: '100px' // מרווח עליון כדי שהתוכן לא יסתתר מתחת ל-Header המקובע
+  paddingTop: '100px'
 };
 
 // --------------------------------
@@ -24,27 +27,29 @@ export const headerStyles = {
     background: 'linear-gradient(to right, #09203f, #537895)',
     color: '#fff',
     display: 'flex',
+    flexDirection: isMobile ? 'column' : 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '10px 0',
+    padding: isMobile ? '15px' : '10px 0',
     boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)'
   },
   brand: {
     color: '#ffcc00',
-    fontSize: '1.8rem',
+    fontSize: isMobile ? '1.5rem' : '1.8rem',
     fontWeight: 'bold',
     textDecoration: 'none',
-    padding: '0 20px'
+    padding: '0 20px',
+    marginBottom: isMobile ? '10px' : '0'
   },
   nav: {
     display: 'flex',
-    gap: '30px',
-    flexDirection: 'row-reverse'
+    gap: '20px',
+    flexDirection: isMobile ? 'column' : 'row-reverse'
   },
   link: {
     color: '#fff',
     textDecoration: 'none',
-    fontSize: '1.1rem',
+    fontSize: isMobile ? '1rem' : '1.1rem',
     fontWeight: 500,
     transition: 'color 0.3s',
     padding: '5px 10px'
@@ -75,10 +80,11 @@ export const home = {
   // Hero Section (חלק ראשון)
   sectionOne: {
     container: {
-      minHeight: 'calc(100vh - 100px)', // כמעט מסך מלא (למעט ה-Header)
+      minHeight: 'calc(100vh - 100px)',
       display: 'flex',
-      direction: 'ltr', // Override ל-RTL, מבטיח שהתמונה תופיע משמאל והטקסט מימין
-      flexDirection: 'row',
+      // במכשירים ניידים נעביר למבנה טור
+      direction: 'ltr',
+      flexDirection: isMobile ? 'column' : 'row',
       alignItems: 'center',
       justifyContent: 'center',
       padding: '60px 20px',
@@ -86,30 +92,31 @@ export const home = {
       color: '#fff'
     },
     image: {
-      flex: '0 0 400px',
-      margin: '0 20px'
+      flex: isMobile ? 'none' : '0 0 400px',
+      width: isMobile ? '80%' : 'auto',
+      margin: isMobile ? '0 auto 20px' : '0 20px'
     },
     text: {
-      flex: '0 0 500px',
-      margin: '0 20px',
-      textAlign: 'right'
+      flex: isMobile ? 'none' : '0 0 500px',
+      margin: isMobile ? '0 auto' : '0 20px',
+      textAlign: isMobile ? 'center' : 'right'
     },
     rotatingText: {
-      fontSize: '2rem',
+      fontSize: isMobile ? '1.5rem' : '2rem',
       color: '#ffcc00',
       marginBottom: '20px',
       minHeight: '50px'
     },
     subTitle: {
-      fontSize: '1.3rem',
+      fontSize: isMobile ? '1rem' : '1.3rem',
       color: '#fff',
       marginBottom: '20px'
     },
     button: {
       backgroundColor: '#ff6600',
       color: '#fff',
-      fontSize: '1.2rem',
-      padding: '15px 30px',
+      fontSize: isMobile ? '1rem' : '1.2rem',
+      padding: isMobile ? '12px 20px' : '15px 30px',
       border: 'none',
       borderRadius: '5px',
       cursor: 'pointer',
@@ -123,7 +130,7 @@ export const home = {
 
   // סקשן עם רקע תמונה עבור "מה השיעורים שלי מכילים?"
   sectionMath: {
-    minHeight: '80vh',
+    minHeight: isMobile ? '60vh' : '80vh',
     padding: '60px 20px',
     backgroundImage: `url(${backroundmath})`,
     backgroundSize: 'cover',
@@ -131,7 +138,6 @@ export const home = {
     backgroundRepeat: 'no-repeat'
   },
 
-  // חלקים נוספים
   sectionBlue: {
     backgroundColor: '#e6f2ff',
     minHeight: '100vh',
@@ -143,13 +149,12 @@ export const home = {
     padding: '60px 20px'
   },
   heading: {
-    fontSize: '3rem',
+    fontSize: isMobile ? '2rem' : '3rem',
     color: '#004d99',
     marginBottom: '20px',
     textAlign: 'center'
   },
 
-  // עיטוף לטבלה כדי להקטין ולמרכז אותה בתוך הסקשן "מה השיעורים שלי מכילים?"
   tableContainer: {
     maxWidth: '700px',
     margin: '0 auto',
@@ -213,7 +218,6 @@ export const faqStyles = {
 // --------------------------------
 // CONTACT FORM STYLES
 // --------------------------------
-
 export const contactForm = {
   formContainer: {
     maxWidth: '500px',
@@ -268,7 +272,6 @@ export const contactForm = {
     color: '#333'
   }
 };
-
 
 // --------------------------------
 // ABOUT PAGE STYLES
@@ -347,7 +350,7 @@ export const floatingButtons = {
   },
   phonePopup: {
     position: 'absolute',
-    bottom: '60px', // מוצג מעל כפתור הטלפון
+    bottom: '60px',
     right: '0',
     backgroundColor: '#004d99',
     color: '#fff',
@@ -359,8 +362,8 @@ export const floatingButtons = {
   },
   phoneText: {
     marginRight: '10px',
-    fontSize: '1.5rem',   // הגדלת הגודל
-    whiteSpace: 'nowrap'  // שמירת הטקסט בשורה אחת
+    fontSize: '1.5rem',
+    whiteSpace: 'nowrap'
   },
   closeButton: {
     background: 'none',
