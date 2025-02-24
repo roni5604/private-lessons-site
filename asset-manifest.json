@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/private-lessons-site/static/js/main.0c557ad7.js",
+    "main.js": "/private-lessons-site/static/js/main.25f11e7c.js",
     "static/media/backroundmath.jpg": "/private-lessons-site/static/media/backroundmath.598b6d8e31d12bb89b24.jpg",
     "static/media/Roni.jpeg": "/private-lessons-site/static/media/Roni.b5bba93de6c64f9f0b85.jpeg",
     "index.html": "/private-lessons-site/index.html",
-    "main.0c557ad7.js.map": "/private-lessons-site/static/js/main.0c557ad7.js.map"
+    "main.25f11e7c.js.map": "/private-lessons-site/static/js/main.25f11e7c.js.map"
   },
   "entrypoints": [
-    "static/js/main.0c557ad7.js"
+    "static/js/main.25f11e7c.js"
   ]
 }
