@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "name": "דוד כהן",
+      "type": "תלמיד תיכון",
+      "image": "https://via.placeholder.com/80.png?text=דוד",
+      "text": "השיעורים עם רוני עזרו לי להבין את החומר בצורה מושלמת.",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "שרה לוי",
+      "type": "תלמידה יסודית",
+      "image": "https://via.placeholder.com/80.png?text=שרה",
+      "text": "מאוד מקצועי ונגיש, מומלץ בחום!",
+      "rating": 4
+    },
+    {
+      "id": 3,
+      "name": "משה רבינוביץ'",
+      "type": "סטודנט",
+      "image": "https://via.placeholder.com/80.png?text=משה",
+      "text": "הרצאות מעשירות ושיטות לימוד חדשניות.",
+      "rating": 5
+    }
+  ]
+  
