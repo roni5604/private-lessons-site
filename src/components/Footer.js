@@ -4,7 +4,11 @@ import { footer } from '../styles';
 const Footer = () => {
   return (
     <footer style={footer.container}>
-      <p>כל הזכויות שמורות לרוני מיכאלי</p>
+      <p>
+        כל הזכויות שמורות ל
+        <a href="https://ronimichaeli.com/he/" style={footer.link}>רוני מיכאלי</a>
+        {' '}— מפתח תוכנה ומורה פרטי למדעי המחשב ומתמטיקה
+      </p>
       <p>
         <a 
           href="https://github.com/roni5604" 
